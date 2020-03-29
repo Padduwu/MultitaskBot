@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
-from secrets import username, password
 from datetime import date
 
 class FireflyBot:
@@ -20,9 +19,11 @@ class FireflyBot:
 
         print("Logging in...")
         username_field = self.driver.find_element_by_xpath('//*[@id="username"]')
+        username = input("Username: \n")
         username_field.send_keys(username)
 
         password_field = self.driver.find_element_by_xpath('//*[@id="password"]')
+        password = input("Password: \n")
         password_field.send_keys(password)
 
         login_button = self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/form/button')
